@@ -1,0 +1,109 @@
+<!-- backend/public/login/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elite Women | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/login.js"></script>
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+      color: gold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.9);
+      border: 1px solid gold;
+      padding: 3rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 25px gold;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .brand-glow {
+      font-family: 'Georgia', serif;
+      font-size: 28px;
+      color: gold;
+      margin-bottom: 1rem;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: gold;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid gold;
+      background-color: #121212;
+      color: gold;
+      font-size: 16px;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: gold;
+      color: #0f0f0f;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e5c100;
+    }
+
+    #errorMessage {
+      margin-top: 15px;
+      color: #ff4b4b;
+      font-size: 14px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px gold;
+      }
+      to {
+        text-shadow: 0 0 20px #ffdf70;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="brand-glow">Elite Women</div>
+    <h2>Member Login</h2>
+    <form id="loginForm">
+      <input type="text" id="membershipNumber" placeholder="Membership #" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="errorMessage"></p>
+    </form>
+  </div>
+</body>
+</html>
