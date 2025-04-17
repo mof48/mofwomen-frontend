@@ -1,5 +1,3 @@
-// public/js/login.js
-
 function logDebug(message) {
   const panel = document.getElementById('debugPanel');
   const log = document.getElementById('debugLog');
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loginForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const membershipNumber = document.getElementById('membershipNumber').value;
+    const membershipNumber = document.getElementById('membershipNumber').value.trim();
     const password = document.getElementById('password').value;
 
     logDebug("🔑 Submitting login...");
@@ -45,12 +43,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const role = data.user.role?.toLowerCase();
       const tier = data.user.tier?.toLowerCase();
-      let redirectURL = '/login/index.html';
+      let redirectURL = '/login/index.html'; // fallback
 
-      if (role === 'member') {
-        redirectURL = `/dashboard/member/${tier || 'index'}.html`;
-      } else {
-        redirectURL = `/admin/index.html`;
+      // 🔁 Role-based and tier-based redirection
+      if (role === 'admin') {
+        redirectURL = '/admin/index.html';
+      } else if (role === 'member') {
+        switch (tier) {
+          case 'gold-rose':
+            redirectURL = '/dashboard/member/gold-rose.html';
+            break;
+          case 'platinum-lily':
+            redirectURL = '/dashboard/member/platinum-lily.html';
+            break;
+          case 'diamond-orchid':
+            redirectURL = '/dashboard/member/diamond-orchid.html';
+            break;
+          default:
+            redirectURL = '/dashboard/member/index.html';
+        }
+      } else if (role === 'speaker') {
+        redirectURL = '/dashboard/speaker/index.html';
+      } else if (role === 'guest') {
+        redirectURL = '/dashboard/guest/index.html';
       }
 
       logDebug(`➡️ Redirecting to: ${redirectURL}`);

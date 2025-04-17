@@ -1,4 +1,3 @@
-<!-- backend/public/login/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/styles.css" />
 
-  <!-- 🔐 Backend API connection setup -->
+  <!-- 🔐 Backend API connection -->
   <script>
     const backendURL = 'https://api.mofwomen.com';
   </script>
   
-  <!-- Your login logic -->
+  <!-- Login Logic -->
   <script defer src="/js/login.js"></script>
 
   <style>
@@ -106,12 +105,18 @@
   <div class="login-container">
     <div class="brand-glow">Elite Women</div>
     <h2>Member Login</h2>
+
     <form id="loginForm">
       <input type="text" id="membershipNumber" placeholder="Membership #" required />
       <input type="password" id="password" placeholder="Password" required />
       <button type="submit">Login</button>
       <p id="errorMessage"></p>
     </form>
+
+    <!-- Optional Debug Panel -->
+    <pre id="debugPanel" style="display:none; text-align:left; color:#ccc; margin-top:20px;">
+      <code id="debugLog"></code>
+    </pre>
   </div>
 </body>
 </html>
