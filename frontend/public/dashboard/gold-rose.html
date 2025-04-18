@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Women | Gold-Rose Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/dashboard-gold.css">
+  <script defer src="/js/logout.js"></script>
+  <script defer src="/js/user-status.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .cover-photo {
+      width: 100%;
+      height: 200px;
+      background: url('/images/default-cover.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .profile-pic-container {
+      position: absolute;
+      bottom: -40px;
+      left: 30px;
+    }
+    .profile-pic-container img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+    }
+    .upload-label {
+      display: block;
+      font-size: 0.8rem;
+      margin-top: 5px;
+    }
+    .style-lifestyle-suite {
+      margin-top: 3rem;
+      background: #fffdf8;
+      padding: 1.5rem;
+      border: 2px solid #e0c6a3;
+      border-radius: 10px;
+    }
+    .style-lifestyle-suite h3 {
+      color: #c39e5c;
+      margin-bottom: 1rem;
+    }
+    .style-lifestyle-suite section {
+      margin-bottom: 2rem;
+    }
+    .style-lifestyle-suite ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .style-lifestyle-suite li {
+      margin: 0.5rem 0;
+    }
+    .style-lifestyle-suite a {
+      text-decoration: none;
+      color: #674d2c;
+      font-weight: 500;
+    }
+    .style-lifestyle-suite a:hover {
+      text-decoration: underline;
+      color: #b08d57;
+    }
+  </style>
+</head>
+<body class="gold">
+  <div id="goldContent" style="display:none;">
+    <nav class="timeline-navbar">
+      <h1>Elite Women</h1>
+      <div>
+        <a href="/dashboard/index.html">Home</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </nav>
+
+    <div class="cover-photo" id="coverPhoto">
+      <div class="profile-pic-container">
+        <img id="profileImg" src="/images/default-profile.jpg" alt="Profile Picture">
+        <label class="upload-label">
+          <input type="file" id="profilePicInput" accept="image/*"> Upload Photo
+        </label>
+      </div>
+    </div>
+
+    <div class="timeline-wrapper" style="margin-top: 60px">
+      <div class="timeline-header">
+        <h2>Welcome, <span id="userName">Loading...</span></h2>
+        <p>Your luxury journey begins here</p>
+      </div>
+
+      <div class="profile-widgets">
+        <div class="widget-box">
+          <h3>📈 Progress</h3>
+          <p>Mentorship Sessions Completed: <strong>12</strong></p>
+          <p>Events Attended: <strong>6</strong></p>
+        </div>
+        <div class="widget-box">
+          <h3>🌟 Gold Perks</h3>
+          <ul>
+            <li>Lifetime access to all VIP retreats</li>
+            <li>Exclusive monthly private mentor calls</li>
+            <li>Front-row seating at international summits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="finance-master-section">
+        <h3>💼 Financial Mastery</h3>
+        <div class="mini-courses">
+          <ul>
+            <li><a href="/courses/intro-to-stocks.html">Intro to Stocks</a></li>
+            <li><a href="/courses/crypto-simplified.html">Crypto Simplified</a></li>
+            <li><a href="/courses/credit-report.html">How to Read a Credit Report</a></li>
+            <li><a href="/courses/investment-property.html">Buying Your First Investment Property</a></li>
+          </ul>
+        </div>
+        <div class="vip-video">
+          <h4>🎥 VIP Video Series</h4>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/fakeFinanceVideo" title="VIP Finance Session" allowfullscreen></iframe>
+        </div>
+        <div class="tools">
+          <h4>🧮 Tools & Simulators</h4>
+          <ul>
+            <li><a href="/tools/credit-score-tracker.html">Credit Score Tracker</a></li>
+            <li><a href="/tools/budget-calculator.html">Budget Calculator</a></li>
+            <li><a href="/tools/investment-simulator.html">Investment Simulator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="style-lifestyle-suite">
+        <h3>💎 Style & Lifestyle Suite</h3>
+        <section class="style-masterclass">
+          <h4>👗 Style Masterclass</h4>
+          <ul>
+            <li><a href="/style/dress-for-power.html">Dressing for Power & Elegance</a></li>
+            <li><a href="/style/luxury-shopping.html">Luxury Shopping Tips</a></li>
+            <li><a href="/style/outfit-planner.html">Outfit Planning Tool</a></li>
+          </ul>
+        </section>
+        <section class="car-buying-coach">
+          <h4>🚗 Car Buying Coach</h4>
+          <ul>
+            <li><a href="/car/lease-vs-buy.html">Lease vs. Buy Guide</a></li>
+            <li><a href="/car/inspection-checklist.html">What to Look for Checklist</a></li>
+            <li><a href="/car/luxury-brand-guide.html">Luxury Brand Comparison</a></li>
+          </ul>
+        </section>
+        <section class="interior-realestate">
+          <h4>🏠 Interior & Real Estate Showcase</h4>
+          <ul>
+            <li><a href="/realestate/luxury-design.html">Luxury Interior Tutorials</a></li>
+            <li><a href="/realestate/virtual-tours.html">Virtual Real Estate Walk-throughs</a></li>
+            <li><a href="/realestate/estate-planning.html">Estate Planning Essentials</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="timeline-feed">
+        <div class="post-entry">
+          <h4>🌸 New Access Unlocked</h4>
+          <p>As a Gold-Rose member, you now receive priority onboarding and early invites to global events.</p>
+        </div>
+        <div class="post-entry">
+          <h4>💎 Member Highlight</h4>
+          <p>Meet Dr. Nia Carter, a Gold-Rose leader featured in Forbes Women for her legacy investments.</p>
+        </div>
+        <div class="post-entry">
+          <h4>✨ Spotlight Webinar</h4>
+          <p>Catch the replay of our luxury wealth expansion masterclass hosted by elite coaches.</p>
+        </div>
+      </div>
+
+      <div class="edit-profile">
+        <h4>Edit Your Profile</h4>
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Title or Company">
+        <textarea rows="3" placeholder="Short Bio"></textarea>
+        <button>Update Profile</button>
+      </div>
+
+      <div class="blog-section">
+        <h4>✍️ Write a New Blog</h4>
+        <textarea rows="4" placeholder="Share your insights or promote your story..."></textarea>
+        <button>Post Blog</button>
+      </div>
+
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/EliteIntroVideo" title="Gold Member Welcome Video" allowfullscreen></iframe>
+      </div>
+
+      <div class="timeline-chart">
+        <h4>Your Growth Journey</h4>
+        <canvas id="growthChart"></canvas>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <button class="lux-btn" onclick="logout()">Log Out</button>
+      </div>
+    </div>
+
+    <footer class="footer-bar">
+      &copy; 2025 Elite Women Network. Empowerment is Luxury.
+    </footer>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem('token');
+
+    if (!user || !token || user.role?.toLowerCase() !== 'member' || user.tier?.toLowerCase() !== 'gold-rose') {
+      window.location.href = '/login/index.html';
+    } else {
+      document.getElementById('userName').textContent = user.name || 'Member';
+      document.getElementById('goldContent').style.display = 'block';
+
+      document.getElementById('profilePicInput').addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (evt) {
+            document.getElementById('profileImg').src = evt.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      const ctx = document.getElementById('growthChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+          datasets: [{
+            label: 'Growth Score',
+            data: [65, 72, 80, 87, 95],
+            borderColor: '#c39e5c',
+            fill: false,
+            tension: 0.3
+          }]
+        },
+        options: {
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

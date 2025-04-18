@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   if (!loginForm) return;
 
-  // ✅ Only declare once — this is your secure backend
-  const backendURL = 'https://api.mofwomen.com';
+  // Automatically pull from embedded <script> if needed
+  const backendURL = typeof window.backendURL !== 'undefined'
+    ? window.backendURL
+    : 'https://api.mofwomen.com';
 
   loginForm.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -32,48 +34,50 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await res.json();
       logDebug(`📥 Response: ${JSON.stringify(data)}`);
 
-      if (!res.ok) {
+      if (!res.ok || !data.user) {
         document.getElementById('errorMessage').textContent = data.message || 'Login failed.';
         logDebug(`❌ Login failed: ${data.message}`);
         return;
       }
 
+      // Store token and user
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
 
+      // Determine redirect path
       const role = data.user.role?.toLowerCase();
       const tier = data.user.tier?.toLowerCase();
-      let redirectURL = '/login/index.html'; // fallback
+      let redirectURL = '/index.html'; // fallback
 
-      // 🔁 Role-based and tier-based redirection
       if (role === 'admin') {
         redirectURL = '/admin/index.html';
       } else if (role === 'member') {
         switch (tier) {
           case 'gold-rose':
-            redirectURL = '/dashboard/member/gold-rose.html';
+            redirectURL = '/dashboard/gold-rose.html';
             break;
           case 'platinum-lily':
-            redirectURL = '/dashboard/member/platinum-lily.html';
+            redirectURL = '/dashboard/platinum-lily.html';
             break;
           case 'diamond-orchid':
-            redirectURL = '/dashboard/member/diamond-orchid.html';
+            redirectURL = '/dashboard/diamond-orchid.html';
             break;
           default:
-            redirectURL = '/dashboard/member/index.html';
+            redirectURL = '/dashboard/index.html';
         }
       } else if (role === 'speaker') {
-        redirectURL = '/dashboard/speaker/index.html';
+        redirectURL = '/speaker/speaker.html';
       } else if (role === 'guest') {
-        redirectURL = '/dashboard/guest/index.html';
+        redirectURL = '/guest/index.html';
       }
 
       logDebug(`➡️ Redirecting to: ${redirectURL}`);
       window.location.href = redirectURL;
 
     } catch (err) {
+      console.error('Login Error:', err);
       logDebug(`❗ Error: ${err.message}`);
-      document.getElementById('errorMessage').textContent = 'Error during login.';
+      document.getElementById('errorMessage').textContent = 'Something went wrong. Please try again.';
     }
   });
 });

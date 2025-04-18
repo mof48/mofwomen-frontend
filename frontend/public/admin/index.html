@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Elite Women | The Black Orchid Boardroom</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/admin-blackorchid.css">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/admin-blackorchid.css" />
   <script defer src="/js/logout.js"></script>
   <script defer src="/js/user-status.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,6 +15,9 @@
       color: #f6f1e7;
       font-family: 'Georgia', serif;
     }
+    #adminContent { display: none; }
+
+    /* [Styling unchanged from your original version...] */
     .timeline-navbar {
       background-color: #000;
       border-bottom: 2px solid gold;
@@ -23,237 +26,146 @@
       justify-content: space-between;
       align-items: center;
     }
-    .timeline-navbar h1 {
-      font-family: 'Playfair Display', serif;
-      color: gold;
-      font-size: 24px;
-      margin: 0;
-    }
-    .timeline-navbar a {
-      color: #f6f1e7;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-    .timeline-wrapper {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #1b1b1b;
-      border: 1px solid gold;
-      border-radius: 15px;
-    }
-    .timeline-header h2 {
-      color: gold;
-    }
-    .timeline-header p {
-      color: #ccc;
-    }
-    .post-entry {
-      background: #121212;
-      border-left: 4px solid gold;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-    }
-    .lux-btn {
-      background-color: gold;
-      border: none;
-      color: black;
-      padding: 0.7rem 1.5rem;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .footer-bar {
-      text-align: center;
-      color: #999;
-      margin-top: 4rem;
-    }
-    .orchid-vase {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .orchid-vase img {
-      max-width: 200px;
-      border: 2px solid gold;
-      border-radius: 20px;
-      box-shadow: 0 0 15px gold;
-      animation: orchid-glow 3s ease-in-out infinite alternate;
-    }
-    @keyframes orchid-glow {
-      0% { box-shadow: 0 0 15px gold; }
-      100% { box-shadow: 0 0 25px 10px gold; }
-    }
-    .admin-tools {
-      margin-top: 2rem;
-    }
-    .admin-tools canvas {
-      background-color: #fff;
-      border-radius: 10px;
-    }
-    .quick-actions {
-      display: flex;
-      justify-content: space-around;
-      margin: 2rem 0;
-    }
-    .quick-actions button {
-      background-color: gold;
-      color: black;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .legacy-timeline {
-  position: relative;
-  margin: auto;
-  max-width: 800px;
-  padding-left: 20px;
-  border-left: 2px solid gold;
-}
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-  padding-left: 1.5rem;
-  animation: fadeInUp 1s ease forwards;
-}
-.timeline-dot {
-  width: 14px;
-  height: 14px;
-  background-color: gold;
-  border-radius: 50%;
-  position: absolute;
-  left: -8px;
-  top: 0.4rem;
-}
-.timeline-content h3 {
-  color: gold;
-  margin-bottom: 0.5rem;
-}
-.timeline-content span {
-  font-size: 0.85rem;
-  color: #ccc;
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+    .timeline-navbar h1 { font-family: 'Playfair Display', serif; color: gold; font-size: 24px; margin: 0; }
+    .timeline-navbar a { color: #f6f1e7; text-decoration: none; margin-left: 20px; font-weight: bold; }
+    .timeline-wrapper { max-width: 960px; margin: 2rem auto; padding: 2rem; background: #1b1b1b; border: 1px solid gold; border-radius: 15px; }
+    .timeline-header h2 { color: gold; }
+    .timeline-header p { color: #ccc; }
+    .post-entry { background: #121212; border-left: 4px solid gold; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    .lux-btn { background-color: gold; border: none; color: black; padding: 0.7rem 1.5rem; font-weight: bold; border-radius: 10px; cursor: pointer; }
+    .footer-bar { text-align: center; color: #999; margin-top: 4rem; }
+    .orchid-vase { text-align: center; margin-top: 3rem; }
+    .orchid-vase img { max-width: 200px; border: 2px solid gold; border-radius: 20px; box-shadow: 0 0 15px gold; animation: orchid-glow 3s ease-in-out infinite alternate; }
+    @keyframes orchid-glow { 0% { box-shadow: 0 0 15px gold; } 100% { box-shadow: 0 0 25px 10px gold; } }
+    .admin-tools { margin-top: 2rem; }
+    .admin-tools canvas { background-color: #fff; border-radius: 10px; }
+    .quick-actions { display: flex; justify-content: space-around; margin: 2rem 0; }
+    .quick-actions button { background-color: gold; color: black; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    .legacy-timeline { position: relative; margin: auto; max-width: 800px; padding-left: 20px; border-left: 2px solid gold; }
+    .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; animation: fadeInUp 1s ease forwards; }
+    .timeline-dot { width: 14px; height: 14px; background-color: gold; border-radius: 50%; position: absolute; left: -8px; top: 0.4rem; }
+    .timeline-content h3 { color: gold; margin-bottom: 0.5rem; }
+    .timeline-content span { font-size: 0.85rem; color: #ccc; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body class="black-orchid">
-  <nav class="timeline-navbar">
-    <h1>The Black Orchid Boardroom</h1>
-    <div>
-      <a href="/admin/index.html">Home</a>
-      <a href="#" onclick="logout()">Logout</a>
-    </div>
-  </nav>
+  <div id="adminContent">
+    <nav class="timeline-navbar">
+      <h1>The Black Orchid Boardroom</h1>
+      <div>
+        <a href="/admin/index.html">Home</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </nav>
 
-  <div class="timeline-wrapper">
-    <div class="timeline-header">
-      <h2>Welcome, <span id="userName">Loading...</span></h2>
-      <p>This dashboard is where elite power meets timeless elegance.</p>
+    <div class="timeline-wrapper">
+      <div class="timeline-header">
+        <h2>Welcome, <span id="userName">Loading...</span></h2>
+        <p>This dashboard is where elite power meets timeless elegance.</p>
+      </div>
+
+      <div class="quick-actions">
+        <button onclick="location.href='/admin/approvals.html'">📝 Approve Members</button>
+        <button onclick="location.href='/admin/logs.html'">📁 View Logs</button>
+        <button onclick="location.href='/admin/settings.html'">⚙️ Admin Settings</button>
+      </div>
+
+      <div class="admin-tools">
+        <h4 style="color:gold">📊 Approval Stats</h4>
+        <canvas id="approvalChart" height="100"></canvas>
+      </div>
+
+      <div class="post-entry">
+        <h4>📊 Approval Center</h4>
+        <p>Manage new member requests with care and class.</p>
+      </div>
+      <div class="post-entry">
+        <h4>🗂️ Site Oversight</h4>
+        <p>Oversee blog posts, event listings, and exclusive content.</p>
+      </div>
+      <div class="post-entry">
+        <h4>💬 Communication Logs</h4>
+        <p>Monitor private messages, community feedback, and mentor updates.</p>
+      </div>
+
+      <div class="orchid-vase">
+        <img src="/images/shenzhen-orchid.jpg" alt="Shenzhen Nongke Orchid" />
+        <p>“Shenzhen Nongke Orchid — the rarest, most luxurious bloom in the world.”</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <button class="lux-btn" onclick="logout()">Log Out</button>
+      </div>
     </div>
 
-    <div class="quick-actions">
-      <button onclick="location.href='/admin/approvals.html'">📝 Approve Members</button>
-      <button onclick="location.href='/admin/logs.html'">📁 View Logs</button>
-      <button onclick="location.href='/admin/settings.html'">⚙️ Admin Settings</button>
+    <div class="timeline-section" style="margin-top: 4rem;">
+      <h2 style="color: gold; text-align: center; margin-bottom: 2rem;">🌍 Legacy Timeline</h2>
+      <div class="legacy-timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>🌸 Launched Global Coaching Tour</h3>
+            <p>Visited 5 countries in 2 months hosting elite coaching events.</p>
+            <span>Jan 2025</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>🏆 Secured $2M Grant for Women Entrepreneurs</h3>
+            <p>Led an initiative funding 50 new women-owned ventures.</p>
+            <span>Feb 2025</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>📍 Curated Luxury Wellness Retreat</h3>
+            <p>Black Orchid hosted 15 VIPs at a private French vineyard.</p>
+            <span>Mar 2025</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="admin-tools">
-      <h4 style="color:gold">📊 Approval Stats</h4>
-      <canvas id="approvalChart" height="100"></canvas>
-    </div>
-
-    <div class="post-entry">
-      <h4>📊 Approval Center</h4>
-      <p>Manage new member requests with care and class.</p>
-    </div>
-    <div class="post-entry">
-      <h4>🗂️ Site Oversight</h4>
-      <p>Oversee blog posts, event listings, and exclusive content.</p>
-    </div>
-    <div class="post-entry">
-      <h4>💬 Communication Logs</h4>
-      <p>Monitor private messages, community feedback, and mentor updates.</p>
-    </div>
-
-    <div class="orchid-vase">
-      <img src="/images/shenzhen-orchid.jpg" alt="Shenzhen Nongke Orchid">
-      <p>“Shenzhen Nongke Orchid — the rarest, most luxurious bloom in the world.”</p>
-    </div>
-
-    <div style="text-align: center; margin-top: 2rem;">
-      <button class="lux-btn" onclick="logout()">Log Out</button>
-    </div>
+    <footer class="footer-bar">
+      &copy; 2025 Elite Women Admin. Luxury is Leadership.
+    </footer>
   </div>
-  <div class="timeline-section" style="margin-top: 4rem;">
-    <h2 style="color: gold; text-align: center; margin-bottom: 2rem;">🌍 Legacy Timeline</h2>
-    <div class="legacy-timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>🌸 Launched Global Coaching Tour</h3>
-          <p>Visited 5 countries in 2 months hosting elite coaching events.</p>
-          <span>Jan 2025</span>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>🏆 Secured $2M Grant for Women Entrepreneurs</h3>
-          <p>Led an initiative funding 50 new women-owned ventures.</p>
-          <span>Feb 2025</span>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>📍 Curated Luxury Wellness Retreat</h3>
-          <p>Black Orchid hosted 15 VIPs at a private French vineyard.</p>
-          <span>Mar 2025</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <footer class="footer-bar">
-    &copy; 2025 Elite Women Admin. Luxury is Leadership.
-  </footer>
 
   <script>
     const user = JSON.parse(localStorage.getItem('user'));
-    if (!user || user.role?.toLowerCase() !== 'admin') {
+    const token = localStorage.getItem('token');
+
+    if (!user || !token || user.role?.toLowerCase() !== 'admin') {
       window.location.href = '/login/index.html';
     } else {
       document.getElementById('userName').textContent = user.name || 'Admin';
-    }
+      document.getElementById('adminContent').style.display = 'block';
 
-    const ctx = document.getElementById('approvalChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Approved', 'Pending', 'Rejected'],
-        datasets: [{
-          label: 'Member Status Overview',
-          data: [120, 35, 5],
-          backgroundColor: ['gold', '#aaa', '#b33'],
-        }]
-      },
-      options: {
-        plugins: {
-          legend: { labels: { color: 'gold' } }
+      const ctx = document.getElementById('approvalChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Approved', 'Pending', 'Rejected'],
+          datasets: [{
+            label: 'Member Status Overview',
+            data: [120, 35, 5],
+            backgroundColor: ['gold', '#aaa', '#b33'],
+          }]
         },
-        scales: {
-          x: { ticks: { color: 'white' } },
-          y: { ticks: { color: 'white' }, beginAtZero: true }
+        options: {
+          plugins: {
+            legend: { labels: { color: 'gold' } }
+          },
+          scales: {
+            x: { ticks: { color: 'white' } },
+            y: { ticks: { color: 'white' }, beginAtZero: true }
+          }
         }
-      }
-    });
+      });
+    }
   </script>
 </body>
 </html>

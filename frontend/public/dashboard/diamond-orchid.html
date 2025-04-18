@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Women | Diamond-Orchid Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/css/dashboard-diamond.css" id="theme-style" />
+  <script defer src="/js/logout.js"></script>
+  <script defer src="/js/user-status.js"></script>
+</head>
+<body class="diamond">
+  <div id="diamondContent" style="display: none;">
+    <nav class="timeline-navbar">
+      <h1>Elite Women</h1>
+      <div>
+        <a href="/dashboard/index.html">Home</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </nav>
+
+    <div class="timeline-wrapper">
+      <div class="timeline-header">
+        <h2>Welcome, <span id="userName">Loading...</span></h2>
+        <p>You're shining at the Diamond-Orchid level. Enjoy your exclusive perks.</p>
+      </div>
+
+      <div class="profile-widgets">
+        <div class="widget-box">
+          <h3>📈 Your Progress</h3>
+          <p>Mentorship Sessions Completed: <strong>8</strong></p>
+          <p>Elite Events Attended: <strong>3</strong></p>
+        </div>
+        <div class="widget-box">
+          <h3>💎 Diamond-Orchid Perks</h3>
+          <ul>
+            <li>✨ VIP Retreat Access</li>
+            <li>🌐 Private Investment Circles</li>
+            <li>💼 Direct Booking with Top Mentors</li>
+            <li>📩 Early-Access to Global Summits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-feed">
+        <div class="post-entry">
+          <h4>✅ You’re Approved!</h4>
+          <p>Diamond-Orchid status confirmed. You’ve unlocked every luxury and leadership level available.</p>
+        </div>
+        <div class="post-entry">
+          <h4>🚷 Paris Wealth Summit</h4>
+          <p>Priority RSVP now open for Diamond-Orchid members. Join the circle of legacy builders.</p>
+        </div>
+        <div class="post-entry">
+          <h4>📢 Your Spotlight</h4>
+          <p>Feature requests open for our next mentorship showcase. Submit your nomination today.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <button class="lux-btn" onclick="logout()">Log Out</button>
+      </div>
+    </div>
+
+    <footer class="footer-bar">
+      &copy; 2025 Elite Women Network. Elevating Legacy Through Luxury.
+    </footer>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem('token');
+
+    if (!user || !token || user.role?.toLowerCase() !== 'member' || user.tier?.toLowerCase() !== 'diamond-orchid') {
+      window.location.href = '/login/index.html';
+    } else {
+      document.getElementById('userName').textContent = user.name || 'Member';
+      document.getElementById('diamondContent').style.display = 'block';
+
+      // Force correct styling and stylesheet (in case of reuse)
+      const themeStyle = document.getElementById('theme-style');
+      if (themeStyle) themeStyle.href = "/css/dashboard-diamond.css";
+      document.body.className = "diamond";
+    }
+  </script>
+</body>
+</html>

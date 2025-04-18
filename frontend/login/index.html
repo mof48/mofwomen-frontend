@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <title>Elite Women | Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
   <!-- 🔐 Backend API connection -->
   <script>
     const backendURL = 'https://api.mofwomen.com';
   </script>
   
-  <!-- Login Logic -->
-  <script defer src="/js/login.js"></script>
+  <!-- ✅ Fixed script path: No leading slash -->
+  <script defer src="js/login.js"></script>
 
   <style>
     body {
@@ -113,7 +113,7 @@
       <p id="errorMessage"></p>
     </form>
 
-    <!-- Optional Debug Panel -->
+    <!-- Debug Panel -->
     <pre id="debugPanel" style="display:none; text-align:left; color:#ccc; margin-top:20px;">
       <code id="debugLog"></code>
     </pre>
