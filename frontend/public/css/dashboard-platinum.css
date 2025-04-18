@@ -1,0 +1,81 @@
+body.platinum {
+    font-family: "Lora", serif;
+    background: linear-gradient(135deg, #e5e4e2, #ffffff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .timeline-navbar {
+    background: #b0b0b0;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .timeline-navbar a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .timeline-wrapper {
+    max-width: 800px;
+    margin: 3rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .timeline-header h2 {
+    font-size: 28px;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-header p {
+    font-size: 16px;
+    color: #999;
+  }
+  
+  .post-entry {
+    background-color: #f6f6f6;
+    border-left: 5px solid #b0b0b0;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+  }
+  
+  .post-entry h4 {
+    color: #6d6d6d;
+    margin-bottom: 0.5rem;
+  }
+  
+  .lux-btn {
+    background-color: #b0b0b0;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .lux-btn:hover {
+    background-color: #a0a0a0;
+  }
+  
+  .footer-bar {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 4rem;
+    color: #aaa;
+    font-size: 14px;
+  }
+  

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elite Women | View All Members</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #f6f1e7;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      border-bottom: 2px solid gold;
+      padding: 1.2rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      color: gold;
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+    }
+
+    .members-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .member-card {
+      background: #1b1b1b;
+      border: 1px solid gold;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin: 1rem;
+      width: 280px;
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: scale(1.03);
+    }
+
+    .member-card h3 {
+      color: gold;
+      margin-bottom: 0.2rem;
+    }
+
+    .member-card p {
+      font-size: 14px;
+      color: #ddd;
+      margin: 4px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 6px;
+    }
+
+    .badge.approved {
+      background: green;
+      color: white;
+    }
+
+    .badge.pending {
+      background: goldenrod;
+      color: black;
+    }
+
+    .badge.rejected {
+      background: crimson;
+      color: white;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: gold;
+      color: black;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin: 2rem auto;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #f8d64e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👑 All Members</h1>
+  </header>
+
+  <div class="members-container" id="membersList">
+    <p>Loading members...</p>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="/admin/index.html" class="back-btn">← Back to Admin</a>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token');
+
+    async function fetchMembers() {
+      try {
+        const res = await fetch('/api/admin/users', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        const members = await res.json();
+        const container = document.getElementById('membersList');
+        container.innerHTML = '';
+
+        members.forEach(member => {
+          const card = document.createElement('div');
+          card.className = 'member-card';
+
+          card.innerHTML = `
+            <h3>${member.name}</h3>
+            <p><strong>Email:</strong> ${member.email}</p>
+            <p><strong>Role:</strong> ${member.role}</p>
+            <p><strong>Tier:</strong> ${member.tier}</p>
+            <p><strong>Membership #:</strong> ${member.membershipNumber}</p>
+            <span class="badge ${member.status}">${member.status.toUpperCase()}</span>
+          `;
+
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error('Error fetching members:', err);
+        document.getElementById('membersList').innerHTML = '<p style="color: red;">Failed to load members.</p>';
+      }
+    }
+
+    fetchMembers();
+  </script>
+</body>
+</html>

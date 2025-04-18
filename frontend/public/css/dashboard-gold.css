@@ -1,0 +1,198 @@
+body.gold {
+    font-family: "Georgia", serif;
+    background: linear-gradient(145deg, #fff8e1, #fbeec1);
+    color: #3a2e1f;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/gold-pattern.png');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .timeline-navbar {
+    background: #c39e5c;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
+  }
+  
+  .timeline-navbar a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .timeline-wrapper {
+    max-width: 950px;
+    margin: 3rem auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeInGold 0.8s ease;
+  }
+  
+  @keyframes fadeInGold {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .timeline-header h2 {
+    font-size: 32px;
+    color: #7a5d1c;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .timeline-header p {
+    font-size: 16px;
+    color: #a88b46;
+    text-align: center;
+  }
+  
+  .post-entry {
+    background-color: #fffaf0;
+    border-left: 6px solid #c39e5c;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    animation: slideInGold 0.5s ease;
+  }
+  
+  @keyframes slideInGold {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .profile-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .widget-box {
+    background-color: #fdf6e3;
+    padding: 1.2rem;
+    border-radius: 12px;
+    border-left: 5px solid #d4af37;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .widget-box:hover {
+    transform: scale(1.03);
+  }
+  
+  .widget-box h3 {
+    color: #7a5d1c;
+    margin-bottom: 0.6rem;
+    font-size: 20px;
+  }
+  
+  .widget-box ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .widget-box ul li::before {
+    content: '◆';
+    color: #d4af37;
+    margin-right: 8px;
+  }
+  
+  .edit-profile {
+    margin-top: 2.5rem;
+    background-color: #fff7e5;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e0c98d;
+  }
+  
+  .edit-profile h4 {
+    margin-bottom: 1rem;
+    color: #7a5d1c;
+  }
+  
+  .edit-profile input[type="text"],
+  .edit-profile textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cba64c;
+    border-radius: 6px;
+    font-family: inherit;
+  }
+  
+  .edit-profile button {
+    background-color: #c39e5c;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-profile button:hover {
+    background-color: #b38b42;
+  }
+  
+  .video-wrapper {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .video-wrapper iframe {
+    width: 100%;
+    max-width: 720px;
+    height: 400px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  }
+  
+  .timeline-chart {
+    margin-top: 2.5rem;
+    background: #fff8e8;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid #c39e5c;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.07);
+    text-align: center;
+  }
+  
+  .timeline-chart canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .lux-btn {
+    background-color: #c39e5c;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 17px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .lux-btn:hover {
+    background-color: #b2863f;
+  }
+  
+  .footer-bar {
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 4rem;
+    color: #a88b46;
+    font-size: 15px;
+    background-color: #fff4db;
+  }
+  

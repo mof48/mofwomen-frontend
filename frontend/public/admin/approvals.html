@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elite Women | Approvals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/admin-blackorchid.css" />
+  <script defer src="/js/approvals.js"></script>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #f6f1e7;
+      font-family: 'Georgia', serif;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: gold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: #1b1b1b;
+      border: 1px solid gold;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #333;
+    }
+
+    th {
+      color: gold;
+    }
+
+    td {
+      color: #eee;
+    }
+
+    .btn-approve, .btn-reject {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-approve {
+      background-color: gold;
+      color: black;
+    }
+
+    .btn-reject {
+      background-color: #b33;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Pending Member Approvals</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Tier</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="pendingMembersTable">
+      <tr><td colspan="4">Loading...</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

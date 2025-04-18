@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup | Elite Women</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/signup.js"></script>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Register</h2>
+    <form id="signupForm" enctype="multipart/form-data">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="text" id="membershipNumber" placeholder="Membership #" disabled />
+
+      <select id="tier">
+        <option value="gold-rose">Gold Rose</option>
+        <option value="platinum-lily">Platinum Lily</option>
+        <option value="diamond-orchid">Diamond Orchid</option>
+      </select>
+
+      <input type="text" id="inviteCode" placeholder="Invite Code (if any)" />
+      <label for="trialRequested">
+        <input type="checkbox" id="trialRequested" />
+        Request $5 Trial
+      </label>
+
+      <label for="proofOfIncome">Upload Proof of Income:</label>
+      <input type="file" id="proofOfIncome" name="proofOfIncome" accept=".pdf,.jpg,.png" />
+
+      <button type="submit">Submit Registration</button>
+      <p id="errorMessage"></p>
+    </form>
+  </div>
+</body>
+</html>

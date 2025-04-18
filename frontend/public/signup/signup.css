@@ -1,0 +1,68 @@
+/* public/css/signup.css */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  h2 {
+    color: #b48c59;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+  }
+  
+  label {
+    margin-top: 15px;
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #b48c59;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #a17846;
+  }
+  
+  #errorMessage {
+    color: #c00;
+    margin-top: 10px;
+    text-align: center;
+  }
+  

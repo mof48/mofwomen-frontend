@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elite Women | Platinum Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/css/dashboard-platinum.css" />
+  <script defer src="/js/logout.js"></script>
+</head>
+<body class="platinum">
+  <nav class="timeline-navbar">
+    <h1>Elite Women</h1>
+    <div>
+      <a href="/dashboard/index.html">Home</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-header">
+      <h2>Welcome, <span id="userName">Loading...</span></h2>
+      <p>You’ve reached the Platinum-Lily tier — elegance, power, and leadership await.</p>
+    </div>
+
+    <div class="profile-widgets">
+      <div class="widget-box">
+        <h3>📈 Progress</h3>
+        <p>Mentorship Sessions Completed: <strong>12</strong></p>
+        <p>Leadership Retreats: <strong>2</strong></p>
+      </div>
+      <div class="widget-box">
+        <h3>🌟 Platinum Perks</h3>
+        <ul>
+          <li>1-on-1 Strategic Branding</li>
+          <li>Early Access to Boardroom Events</li>
+          <li>Leadership & Investment Masterclass</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="edit-profile">
+      <h4>Edit Your Vision Statement</h4>
+      <input type="text" placeholder="My 2025 Vision..." />
+      <textarea rows="3" placeholder="Describe your brand, legacy, and ambition..."></textarea>
+      <button>Save</button>
+    </div>
+
+    <div class="video-wrapper">
+      <h4>✨ Welcome Video</h4>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Welcome to Platinum" allowfullscreen></iframe>
+    </div>
+
+    <div class="timeline-chart">
+      <h4>🎯 Your Monthly Impact</h4>
+      <canvas id="impactChart"></canvas>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <button class="lux-btn" onclick="logout()">Log Out</button>
+    </div>
+  </div>
+
+  <footer class="footer-bar">
+    &copy; 2025 Elite Women Network. Elegance. Intelligence. Impact.
+  </footer>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) {
+      window.location.href = '/login/index.html';
+    } else {
+      document.getElementById('userName').textContent = user.name;
+    }
+
+    // Simple example chart
+    const canvas = document.getElementById('impactChart');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Mentorships', 'Events', 'Referrals', 'Investments'],
+          datasets: [{
+            label: 'March Impact',
+            data: [7, 3, 5, 2],
+            backgroundColor: '#b0b0b0'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

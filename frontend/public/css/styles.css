@@ -1,0 +1,502 @@
+
+/* public/css/styles.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f6f9fc;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form input[type="file"] {
+  padding: 6px;
+}
+
+button {
+  background-color: #004aad;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #003688;
+}
+
+.error {
+  color: red;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.success {
+  background-color: #28a745;
+}
+
+.toast.error {
+  background-color: #dc3545;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+form input, form select {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #5a189a;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7b2cbf;
+}
+
+.form-message {
+  color: red;
+  text-align: center;
+}
+.dashboard-container {
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #5a189a;
+}
+
+#logoutBtn {
+  background: #ef233c;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.user-info {
+  margin-top: 30px;
+}
+
+.user-info p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+.admin-dashboard {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  font-family: 'Georgia', serif;
+}
+
+.admin-dashboard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-dashboard header h1 {
+  color: #b76e79;
+  font-size: 2rem;
+}
+
+.admin-dashboard button {
+  background-color: #b76e79;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pending-section h2 {
+  margin-top: 30px;
+  color: #333;
+}
+
+.pending-card {
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: white;
+}
+
+.pending-card .actions {
+  margin-top: 10px;
+}
+
+.pending-card button {
+  margin-right: 10px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pending-card button:first-child {
+  background: #198754;
+  color: white;
+}
+
+.pending-card button:last-child {
+  background: #dc3545;
+  color: white;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+table thead {
+  background: #b76e79;
+  color: white;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+table td button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+table td button:first-child {
+  background-color: #198754;
+  color: white;
+}
+
+table td button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+/* General Body Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Box */
+.login-container,
+.signup-container,
+.dashboard-container,
+.admin-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #111;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/* Error Message */
+#errorMessage {
+  margin-top: 10px;
+  color: red;
+  font-size: 14px;
+}
+
+/* Table (Admin) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #111;
+  color: white;
+}
+
+.status-approved {
+  color: green;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: red;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+/* public/css/style.css */
+
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff9f6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #8b5e3c;
+}
+
+a {
+  text-decoration: none;
+  color: #8b5e3c;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #a36c45;
+}
+
+.navbar {
+  background-color: #8b5e3c;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .nav-links a {
+  margin-left: 20px;
+  color: white;
+}
+
+.container {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+button, .btn {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #a36c45;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+/* dashboard-gold.css */
+body.gold {
+  background: linear-gradient(to right, #fff8f0, #f7e6e6);
+}
+
+.gold .timeline-navbar {
+  background: #ad8a9c;
+  color: white;
+}
+
+.gold .timeline-header h2 {
+  color: #b36b85;
+}
+
+.gold .post-entry {
+  border-left-color: #d8a1b0;
+  background: #fff5f8;
+}
+
+/* dashboard-platinum.css */
+body.platinum {
+  background: linear-gradient(to right, #f4f6f9, #e1e5ec);
+}
+
+.platinum .timeline-navbar {
+  background: #9ba9b4;
+  color: white;
+}
+
+.platinum .timeline-header h2 {
+  color: #4f6272;
+}
+
+.platinum .post-entry {
+  border-left-color: #708090;
+  background: #f0f4f8;
+}
+
+/* dashboard-diamond.css */
+body.diamond {
+  background: linear-gradient(to right, #fefcff, #f2efff);
+}
+
+.diamond .timeline-navbar {
+  background: #a78bd4;
+  color: white;
+}
+
+.diamond .timeline-header h2 {
+  color: #5e2d91;
+}
+
+.diamond .post-entry {
+  border-left-color: #bfa5f2;
+  background: #f8f5ff;
+}

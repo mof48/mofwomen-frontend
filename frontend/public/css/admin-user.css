@@ -1,0 +1,54 @@
+body.black-orchid {
+    background-color: #0f0f0f;
+    color: #f6f1e7;
+    font-family: 'Georgia', serif;
+    padding: 2rem;
+  }
+  
+  #userCardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .user-card {
+    background-color: #1c1c1c;
+    border: 2px solid gold;
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: #f6f1e7;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px gold;
+  }
+  
+  .user-card h3 {
+    color: gold;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-card p {
+    margin: 0.25rem 0;
+  }
+  
+  .status-approved {
+    color: #50fa7b;
+    font-weight: bold;
+  }
+  
+  .status-pending {
+    color: #ffb86c;
+    font-weight: bold;
+  }
+  
+  .status-rejected {
+    color: #ff4b5c;
+    font-weight: bold;
+  }
+  

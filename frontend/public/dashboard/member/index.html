@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Women | Luxury Timeline</title>
+  
+  <!-- Global styles and tier-specific stylesheet -->
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/css/dashboard-gold.css" id="theme-style" />
+
+  <!-- JS scripts -->
+  <script defer src="/js/logout.js"></script>
+  <script defer src="/js/user-status.js"></script>
+</head>
+<body class="gold">
+  <nav class="timeline-navbar">
+    <h1>Elite Women</h1>
+    <div>
+      <a href="/dashboard/index.html">Home</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-header">
+      <h2>Welcome, <span id="userName">Loading...</span></h2>
+      <p>Your luxury journey begins here</p>
+    </div>
+
+    <div class="post-entry">
+      <h4>🌸 You’ve been approved!</h4>
+      <p>As a Gold-Rose member, you now have access to premium mentorship circles and luxury retreats.</p>
+    </div>
+    <div class="post-entry">
+      <h4>🪷 New Event Alert</h4>
+      <p>Our Paris Wealth Summit begins this fall. RSVP opens tomorrow. Diamond-Orchid members get priority seating.</p>
+    </div>
+    <div class="post-entry">
+      <h4>🌟 Connect with Top Mentors</h4>
+      <p>Explore our exclusive mentor marketplace and book private coaching sessions.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <button class="lux-btn" onclick="logout()">Log Out</button>
+    </div>
+  </div>
+
+  <footer class="footer-bar">
+    &copy; 2025 Elite Women Network. Empowerment is Luxury.
+  </footer>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) {
+      window.location.href = '/login/index.html';
+    } else {
+      document.getElementById('userName').textContent = user.name;
+      const tier = user.tier?.toLowerCase();
+      const themeStyle = document.getElementById('theme-style');
+
+      if (tier && themeStyle) {
+        if (tier.includes("platinum")) {
+          themeStyle.href = "/css/dashboard-platinum.css";
+          document.body.className = "platinum";
+        } else if (tier.includes("diamond")) {
+          themeStyle.href = "/css/dashboard-diamond.css";
+          document.body.className = "diamond";
+        } else {
+          themeStyle.href = "/css/dashboard-gold.css";
+          document.body.className = "gold";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
