@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <title>Elite Women | Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- ✅ Corrected path to your global stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css" />
 
   <!-- 🔐 Backend API connection -->
   <script>
     const backendURL = 'https://api.mofwomen.com';
   </script>
-  
-  <!-- ✅ Fixed script path: No leading slash -->
-  <script defer src="js/login.js"></script>
+
+  <!-- ✅ Corrected script path with leading slash -->
+  <script defer src="/js/login.js"></script>
 
   <style>
     body {
@@ -113,7 +115,7 @@
       <p id="errorMessage"></p>
     </form>
 
-    <!-- Debug Panel -->
+    <!-- Optional Debug Panel -->
     <pre id="debugPanel" style="display:none; text-align:left; color:#ccc; margin-top:20px;">
       <code id="debugLog"></code>
     </pre>
